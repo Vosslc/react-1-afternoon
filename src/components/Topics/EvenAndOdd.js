@@ -21,14 +21,14 @@ export default class EvenAndOdd extends Component {
     let evens = [];
     let odds = [];
 
-    for ( i = 0; i < arr.length; i++ ){
+    for ( let i = 0; i < arr.length; i++ ){
       if ( arr[i] % 2 === 0 ) {
         evens.push ( parseInt (arr[i], 10) );
       }else{
         odds.push ( parseInt (arr[i], 10) )
       }
     }
-    // NEED TO this.setSate
+    this.setState({ evenArray: evens, oddArray: odds });
   }
 
 
@@ -37,10 +37,10 @@ export default class EvenAndOdd extends Component {
       // <p>Even And Odd Component</p>
       <div className="puzzleBox evenAndOddPB">
         <h4>Evens and Odds</h4>
-        <input className="inputLine" />
-        <Button className="confirmationButton" onClick={ ()=> { () }}></Button>
-        <span className="resultsBox"></span>
-        <span className="resultsBox"></span>
+        <input className="inputLine" onChange={ (e) => this.handleChange(e.target.value) }></input> 
+        <button className="confirmationButton" onClick={ () => this.assignEvenAndOdds(this.state.userInput) }> Split </button>
+        <span className="resultsBox">Evens: { JSON.stringify(this.state.evenArray) }</span>
+        <span className="resultsBox">Odds: { JSON.stringify(this.state.oddArray) }</span>
       </div>
     )
   }

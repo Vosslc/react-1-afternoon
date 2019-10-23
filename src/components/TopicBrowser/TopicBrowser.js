@@ -27,4 +27,4 @@ export default class TopicBrowser extends Component {
   }
 }
 
-//export default TopicBrowser; <----- this can be placed in line 6 right before class
+//export default TopicBrowser; <----- this can be placed right before class TopicBrowser extends Component
